@@ -13,7 +13,8 @@ var server = http.createServer(function(req, res) {
   	var innerStroke = 2;
   	var radius = 50.0;
 
-  	var buffer = 2 * outerStroke;
+	var glow = 8;
+  	var buffer = glow;
   	var cx = buffer + radius;
   	var cy = cx;
   	var radians = 3.0 * Math.PI / 2.0 + 2 * Math.PI * percent;
@@ -34,7 +35,7 @@ var server = http.createServer(function(req, res) {
 			var pathStr = "M" + cx + "," + (cy - radius) + "A" + radius + "," + radius + ",0," + (percent > .5 ? '1' : '0') + ",1," + arcX + "," + arcY;
 		    meter = r.path(pathStr).attr({stroke: "#fff", "stroke-width": innerStroke, "stroke-linecap": "round"});
 		}
-		meter.glow({color:"#fff", width: 15});
+		meter.glow({color:"#fff", width: glow});
     });
     res.end(svg);
 });
