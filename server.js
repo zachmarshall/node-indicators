@@ -11,6 +11,7 @@ var server = http.createServer(function(req, res) {
 	var query = url_parts.query;
 	
   	var percent = query["percent"] ? parseFloat(query["percent"]) / 100.0 : 0.0;
+	var size = query["size"] ? parseFloat(query["size"]) : 58;
   	var outerStroke = 3;
   	var innerStroke = 2;
   	var radius = 50.0;
@@ -40,7 +41,7 @@ var server = http.createServer(function(req, res) {
 		meter.glow({color:"#fff", width: glow});
     });
 	var conv = im.convert(['-background', 'none',
-				'-resize', '180',
+				'-resize', size,
 				'-density', '220', 
 				'-units', 'PixelsPerInch', 
 				'svg:-', 'png:-']);
