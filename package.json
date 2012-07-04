@@ -1,0 +1,22 @@
+{
+  "author": "kurmbox (https://github.com/kurmbox)",
+  "name": "indicators",
+  "description": "SVG or PNG generated circular indicators using Raphäel and imagemagick.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kurmbox/node-indicators",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kurmbox/node-indicators.git"
+  },
+  "main": "./lib/indicators",
+  "dependencies": {
+      "node-raphael": "git://github.com/kurmbox/node-raphael.git#raphael-210-built",
+      "imagemagick": ">= 0.1.2"
+  },
+  "devDependencies": {},
+  "directories": {"lib": "./lib"},
+  "engines": {
+      "node": ">= 0.4.x"
+  },
+  "optionalDependencies": {}
+}
